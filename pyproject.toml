@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pauli-grouping-dtp"
+version = "1.0.0"
+description = "DSATUR-Tabu-Polish (DTP): graph-colouring-based measurement grouping for Pauli-sum Hamiltonians (CMP 7002 practical project)"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Thulmin Jayawardena" }]
+license = { text = "MIT" }
+dependencies = ["numpy>=1.24"]
+
+[project.optional-dependencies]
+chem = ["pyscf==2.14.0", "openfermion==1.8.1", "pyyaml==6.0.3", "scipy==1.17.1"]
+baselines = ["qiskit==2.5.2", "pennylane==0.45.1", "rustworkx==0.18.1", "networkx==3.6.1", "gcol==2.2", "ortools==9.15.6755"]
+dev = ["pytest", "pytest-cov", "pyyaml", "pandas", "matplotlib", "psutil"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

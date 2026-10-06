@@ -1,0 +1,26 @@
+set,instance,label,molecule,basis,encoding,n_qubits,m,electrons,sha256_12
+tuning,HF_sto-3g_JW,HF,HF,sto-3g,JW,12,630,10,ca4ef95aad0e
+tuning,BH3_sto-3g_JW,BH₃,BH3,sto-3g,JW,16,1964,8,f063d6112f2a
+main,H2_sto-3g_JW,H₂,H2,sto-3g,JW,4,14,2,a11dcf8e3bd5
+main,LiH_sto-3g_JW,LiH,LiH,sto-3g,JW,12,630,4,c368a49e3791
+main,BeH2_sto-3g_JW,BeH₂,BeH2,sto-3g,JW,14,665,6,fe4c1f57579d
+main,H2O_sto-3g_JW,H₂O,H2O,sto-3g,JW,14,1085,10,65a05c39f67b
+main,NH3_sto-3g_JW,NH₃,NH3,sto-3g,JW,16,3020,10,5daa76a85a00
+main,CH4_sto-3g_JW,CH₄,CH4,sto-3g,JW,18,6891,10,821d4bd48898
+main,N2_sto-3g_JW,N₂,N2,sto-3g,JW,20,2950,14,fce5fa187616
+main,CO_sto-3g_JW,CO,CO,sto-3g,JW,20,5850,14,88a0c414dbb1
+main,HCl_sto-3g_JW,HCl,HCl,sto-3g,JW,20,5850,18,4b6548b019be
+main,NaH_sto-3g_JW,NaH,NaH,sto-3g,JW,20,5850,12,54864b9db2be
+main,H2S_sto-3g_JW,H₂S,H2S,sto-3g,JW,22,6245,18,5dee39844209
+bk,LiH_sto-3g_BK,LiH [BK],LiH,sto-3g,BK,12,630,4,84d034bad151
+bk,H2O_sto-3g_BK,H₂O [BK],H2O,sto-3g,BK,14,1085,10,57bc64215be6
+bk,NH3_sto-3g_BK,NH₃ [BK],NH3,sto-3g,BK,16,2936,10,c450ecb93f6a
+bk,N2_sto-3g_BK,N₂ [BK],N2,sto-3g,BK,20,2950,14,46effb1989c5
+exact,H2_sto-3g_JW,H₂,H2,sto-3g,JW,4,14,2,a11dcf8e3bd5
+exact,HeH+_sto-3g_JW,HeH⁺,HeH+,sto-3g,JW,4,26,2,ed0ca08ef220
+exact,H3+_sto-3g_JW,H₃⁺,H3+,sto-3g,JW,6,61,2,13973e514d67
+exact,H2_6-31g_JW,H₂ (6-31G),H2,6-31g,JW,8,184,2,f9597cab6598
+exact,H4chain_sto-3g_JW,H₄ chain,H4chain,sto-3g,JW,8,184,4,7bb0559d42fb
+scaling,H2O_6-31g_JW,H₂O (6-31G),H2O,6-31g,JW,26,12731,10,5406fc24443d
+scaling,NH3_6-31g_JW,NH₃ (6-31G),NH3,6-31g,JW,30,37829,10,cce0086137db
+scaling,N2_6-31g_JW,N₂ (6-31G),N2,6-31g,JW,36,34654,14,d8df2d03d0a5

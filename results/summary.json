@@ -1,0 +1,90 @@
+{
+ "notes": [],
+ "complexity_fit": {
+  "slope": 1.7298437597134846,
+  "intercept": -15.382546533986233,
+  "points": 13
+ },
+ "H2_pairs": {
+  "le": 20,
+  "lt": 18,
+  "n": 20
+ },
+ "H4_pairs": {
+  "lt": 20,
+  "n": 22
+ },
+ "figures": [
+  "fig_k_vs_best_deployed.png",
+  "fig_pareto_qwc.png",
+  "fig_trajectories_seed0.png",
+  "fig_scaling_phase01.png",
+  "fig_memory.png"
+ ],
+ "requirements": {
+  "met": 20,
+  "assessed": 20,
+  "denominator": 20,
+  "coverage_percent": 100.0,
+  "target": "> 95% (20/20)"
+ },
+ "gates": [
+  {
+   "id": "G1",
+   "gate": "Validity of every DTP output (independent checker)",
+   "pass": true,
+   "evidence": "772/772 DTP runs valid"
+  },
+  {
+   "id": "G2",
+   "gate": "Completeness (every term in exactly one group)",
+   "pass": true,
+   "evidence": "checker verifies exactly-once assignment; colour vector length equals m in every run"
+  },
+  {
+   "id": "G3",
+   "gate": "Determinism (3 deterministic replays per instance and relation)",
+   "pass": true,
+   "evidence": "22/22 instance-relation pairs with 3/3 identical replays"
+  }
+ ],
+ "hypotheses": [
+  {
+   "id": "H1",
+   "statement": "DTP k <= its DSATUR seed on 100% of runs (by construction)",
+   "result": "150/150 runs",
+   "holds": true
+  },
+  {
+   "id": "H2",
+   "statement": "median DTP k <= best deployed on every pair with m >= 100, and strictly lower on at least half",
+   "result": "<= on 20/20; < on 18/20",
+   "holds": true
+  },
+  {
+   "id": "H3",
+   "statement": "polishing raises R\u0302: median ratio over QWC instances >= 1.5; k never increased",
+   "result": "median ratio 1.570; k never increased: True; R\u0302 never decreased: True",
+   "holds": true
+  },
+  {
+   "id": "H4",
+   "statement": "DTP uses fewer groups than Sorted Insertion on each evaluation pair",
+   "result": "fewer on 20/22",
+   "holds": false
+  },
+  {
+   "id": "H5",
+   "statement": "requirement coverage > 95% (20/20)",
+   "result": "20/20 = 100.0%",
+   "holds": true
+  }
+ ],
+ "tests": {
+  "total": 104,
+  "passed": 104,
+  "failed": 0,
+  "skipped": 0
+ },
+ "coverage_total": 95.09025270758123
+}

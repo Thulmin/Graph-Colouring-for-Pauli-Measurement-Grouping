@@ -1,0 +1,79 @@
+Experiment launch manifest
+experiments started (UTC): 2026-10-01T14:36:56Z
+manifest written (UTC): 2026-10-01T14:37:24Z
+
+SHA-256 of the protocol and code at launch:
+833209b3455ebde7fd131c9d7100110534a90ea115144dee038aa3d671401004  docs/DEVIATIONS.md
+f21561e306409b7125bcf2c9d2ba4627dfeefba275093e9cd4a053d658557ce6  configs/experiments.yaml
+1584ac273605a6bed35a917d9e4ac5d8e216f133418d47ac71c7885778de017b  configs/molecules.yaml
+7223b407bc7412ac9480b9c56c5a4cc0faed9667af9e800769557c3e831b30a4  src/dtp/__init__.py
+d975d26a4d99504be13c48edf59c1dfc7a19299f5de51a74f5a61f29d9266a26  src/dtp/baselines.py
+0c7251ae2eeb8088a6211c87be778a166195ea6f000799e6e893677b5c1b60c0  src/dtp/checker.py
+407afdad9ed06e015c5a31368eac6a71b61d751e9dd7f0cf456bdfb824db2987  src/dtp/colouring.py
+229b971a93137d18c069c075ba25c4b1d559fadfd0a79eeb4d737666272169d7  src/dtp/conflicts.py
+d584d62a99d4d4a1ac873cb5af223c54c1e934cee283306364900530e9d415bc  src/dtp/dtp.py
+18298ec6cc4ae15fab8b77c783d543e5ccbaaecba89cd4368d2c2ffe7f890a52  src/dtp/instances.py
+58e87e4f18441cf2b7327258a1e68ed74541747ac1e3edc5e9bad3c7233cd2fe  src/dtp/iterated_greedy.py
+cc5b617b7c1ab157118c1654fd186f8889514d042dc84f3696063ef6d1dc0b0a  src/dtp/metrics.py
+48e5707671bde5e760dae8b8587e8adbe250d71a889c8f8e9fb30a56a11af473  src/dtp/pauli.py
+27318205c2ebcff47298dcc4356439131af7ac583484956a4c203af1a722c9b7  src/dtp/polish.py
+0ca8a3ff501e7b1e6abe7dad56c7ff5109a724271bda8f978015acdf72f794e8  src/dtp/tabucol.py
+362fd5fab4fa806c1f9cd8400dd75f59989a855aca8f3e86b2c858a17823a2b2  src/dtp/experiments/__init__.py
+596317c0cc38691f720f3dde2484d73d2c0a793227e1f3db0ca012ef050f9bdb  src/dtp/experiments/limits.py
+f1f063a908ad720d1d77a5422c5a42f04f8ed530f849bf2a85da082ae5d9811e  src/dtp/experiments/worker.py
+3a30714fb7ebe860f8cbf7d1183a45f53fcfedafa7bb6845e3339b7ba00d4ba4  experiments/run_experiments.py
+
+file modification times (UTC):
+docs/DEVIATIONS.md 2026-10-01T14:36:21Z
+configs/experiments.yaml 2026-10-01T14:36:03Z
+src/dtp/dtp.py 2026-10-01T14:20:33Z
+
+Resumption record
+container restart detected (UTC): 2026-10-01T18:57:29Z
+last result row before the stop (UTC): 2026-10-01T15:33:56Z (results/raw/main.jsonl, 396 complete rows, all valid JSON)
+cause: the cloud container was stopped while the session was idle; all processes ended; files persisted
+action: same command relaunched; the runner skips job IDs already present in results/raw/<phase>.jsonl and reruns
+        any job that was in progress when the container stopped
+code and configuration check before relaunch: every src/, experiments/ and configs/ hash above matches (sha256sum -c);
+        only docs/DEVIATIONS.md differs, because observations O1 and O2 were appended after the launch
+
+Resumption record 2
+container restart detected (UTC): 2026-10-02T07:42:57Z
+last result row before the stop (UTC): 2026-10-01T21:05:51Z (results/raw/g3.jsonl, 18 complete rows, all valid JSON; results/raw/main.jsonl unchanged, 604 rows, phase complete)
+cause: the cloud container was stopped while the session was idle; all processes ended; files persisted
+action: same command relaunched at 2026-10-02T07:43:48Z; completed job IDs are skipped and jobs in progress at the stop are rerun
+code and configuration check before relaunch: every src/, experiments/ and configs/ hash above matches (sha256sum -c);
+        only docs/DEVIATIONS.md differs, because observations O1 and O2 were appended after the launch
+
+Protocol change record (C16)
+recorded (UTC): 2026-10-02T07:55:19Z, while the runner started at 2026-10-02T07:43:48Z was in the g3 phase and before any ablation run
+change: same-phase DTP control runs (ablation "none", QWC, the ablation seeds) added to the ablation plan; see docs/DEVIATIONS.md, C16
+effect on the running process: none (it keeps the job list it loaded at start); the 75 control runs are executed afterwards
+        with the same command restricted to the ablation phase
+new SHA-256 of the changed files:
+1f0aa5b1b6f93059fc5a243df9e0cfa70cd76ef3d06b9f8ff32fbf092cd81002  experiments/run_experiments.py
+0a004e2f816cda69a2c303548068ab122a75fb80e73fc0551f7c4faa1f9c48dc  docs/DEVIATIONS.md
+all other hashes above are unchanged
+
+Resumption record 3
+container restart detected (UTC): 2026-10-02T12:59:25Z
+last result row before the stop (UTC): 2026-10-02T10:56:41Z (results/raw/ablation.jsonl, 278 complete rows, all valid JSON; the main, g3, bk and exact phases were complete and are unchanged)
+cause: the cloud container was stopped; all processes ended; files persisted
+action: same command relaunched at 2026-10-02T13:02:33Z; completed job IDs are skipped and jobs in progress at the stop are rerun.
+        The relaunched process loads the plan that includes change C16, so the 75 DTP control runs are executed inside
+        the ablation phase, two at a time together with the 32 remaining ablation runs, before the scaling and gcol phases
+code and configuration check before relaunch: every src/ and configs/ hash in the launch list matches (sha256sum -c);
+        experiments/run_experiments.py matches the C16 record; docs/DEVIATIONS.md differs from the C16 record because
+        observation O3 was appended afterwards
+
+Resumption record 4
+container restart detected (UTC): 2026-10-02T16:11:02Z
+last result row before the stop (UTC): 2026-10-02T15:41:56Z (results/raw/gcol.jsonl, 67 complete rows, all valid JSON; the main, g3, bk, exact, ablation and scaling phases were complete and are unchanged)
+cause: the cloud container was stopped; all processes ended; files persisted
+action: same command relaunched at 2026-10-02T16:11:42Z; completed job IDs are skipped and jobs in progress at the stop are rerun
+code and configuration check before relaunch: every src/ and configs/ hash in the launch list matches (sha256sum -c);
+        experiments/run_experiments.py matches the C16 record; docs/DEVIATIONS.md differs from the C16 record because
+        observations O3 and O4 were appended afterwards. The memory limit of the shell's control group after the
+        restart is unchanged (6273757184 bytes). The kernel log of the stopped container is lost; logs/kernel_oom.log
+        keeps the five out-of-memory records saved before the stop (the record of the sixth such run, CH4 QWC GCol
+        PartialCol seed 2, was not saved)

@@ -1,0 +1,5 @@
+| id   | gate                                                            | pass   | evidence                                                                             |
+|:-----|:----------------------------------------------------------------|:-------|:-------------------------------------------------------------------------------------|
+| G1   | Validity of every DTP output (independent checker)              | True   | 772/772 DTP runs valid                                                               |
+| G2   | Completeness (every term in exactly one group)                  | True   | checker verifies exactly-once assignment; colour vector length equals m in every run |
+| G3   | Determinism (3 deterministic replays per instance and relation) | True   | 22/22 instance-relation pairs with 3/3 identical replays                             |

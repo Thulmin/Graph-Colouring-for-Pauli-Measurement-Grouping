@@ -1,0 +1,62 @@
+# Pre-registered experiment configuration (Phase3_Preregistration.md, fixed 1 October 2026).
+# Any change after evaluation results exist must be logged as a deviation in docs/DEVIATIONS.md.
+
+resource_limits:            # pre-registration section 4: otherwise "not executed (resource limit)"
+  generation_seconds: 1800
+  memory_gib: 6
+
+budgets:
+  # DTP Phase 3 and Iterated Greedy: T(m) = min(300, max(10, 0.02 m)) seconds
+  T_min_s: 10
+  T_max_s: 300
+  T_per_term_s: 0.02
+  polish_passes: 20
+  polish_seconds: 60
+  cpsat_seconds: 600
+  run_timeout_s: 1800       # hard wall-time limit per run (any method)
+
+seeds:
+  small_m_limit: 5000       # m <= 5000: seeds 0-9; larger m: seeds 0-2
+  small: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  large: [0, 1, 2]
+
+instance_sets:
+  tuning:          # parameter choices only; excluded from every evaluation table
+    - {molecule: HF,  basis: sto-3g, encoding: JW}
+    - {molecule: BH3, basis: sto-3g, encoding: JW}
+  main:            # evaluation, QWC (primary) and FC (secondary)
+    - {molecule: H2,   basis: sto-3g, encoding: JW}
+    - {molecule: LiH,  basis: sto-3g, encoding: JW}
+    - {molecule: BeH2, basis: sto-3g, encoding: JW}
+    - {molecule: H2O,  basis: sto-3g, encoding: JW}
+    - {molecule: NH3,  basis: sto-3g, encoding: JW}
+    - {molecule: CH4,  basis: sto-3g, encoding: JW}
+    - {molecule: N2,   basis: sto-3g, encoding: JW}
+    - {molecule: CO,   basis: sto-3g, encoding: JW}
+    - {molecule: HCl,  basis: sto-3g, encoding: JW}
+    - {molecule: NaH,  basis: sto-3g, encoding: JW}
+    - {molecule: H2S,  basis: sto-3g, encoding: JW}
+  bk:              # encoding robustness, QWC
+    - {molecule: LiH, basis: sto-3g, encoding: BK}
+    - {molecule: H2O, basis: sto-3g, encoding: BK}
+    - {molecule: NH3, basis: sto-3g, encoding: BK}
+    - {molecule: N2,  basis: sto-3g, encoding: BK}
+  exact:           # proven optima via CP-SAT, QWC and FC
+    - {molecule: H2,      basis: sto-3g, encoding: JW}
+    - {molecule: HeH+,    basis: sto-3g, encoding: JW}
+    - {molecule: H3+,     basis: sto-3g, encoding: JW}
+    - {molecule: H2,      basis: 6-31g,  encoding: JW}
+    - {molecule: H4chain, basis: sto-3g, encoding: JW}
+  scaling:         # runtime and memory growth, QWC
+    - {molecule: H2O, basis: 6-31g, encoding: JW}
+    - {molecule: NH3, basis: 6-31g, encoding: JW}
+    - {molecule: N2,  basis: 6-31g, encoding: JW}
+
+deployed_options: [qiskit_lf, pennylane_lf, pennylane_dsatur, pennylane_rlf, pennylane_gis]
+
+# GCol (independent TabuCol / PartialCol implementation; pure Python). Fixed on the tuning molecules
+# (1 Oct 2026, before evaluation runs): at 1,000 iterations GCol took 18 s on HF/QWC (m = 630) and
+# more than 4 minutes on BH3/QWC (m = 1964), so it runs last, with 3 seeds and a 600 s limit per run.
+gcol_it_limit: 5000
+gcol_seeds: [0, 1, 2]
+gcol_timeout_s: 600

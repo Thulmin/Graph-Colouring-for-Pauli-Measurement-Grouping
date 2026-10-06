@@ -1,0 +1,79 @@
+{
+ "name": "H2_sto-3g_JW",
+ "molecule": "H2",
+ "basis": "sto-3g",
+ "encoding": "JW",
+ "n_qubits": 4,
+ "terms": [
+  "IIIZ",
+  "IIZI",
+  "IIZZ",
+  "IZII",
+  "IZIZ",
+  "IZZI",
+  "XXYY",
+  "XYYX",
+  "YXXY",
+  "YYXX",
+  "ZIII",
+  "ZIIZ",
+  "ZIZI",
+  "ZZII"
+ ],
+ "coeffs": [
+  -0.22278593040418446,
+  -0.22278593040418446,
+  0.17434844185575665,
+  0.17119774903432972,
+  0.12054482205301797,
+  0.16586702410589194,
+  -0.04532220205287396,
+  0.04532220205287396,
+  0.04532220205287396,
+  -0.04532220205287396,
+  0.17119774903432972,
+  0.16586702410589194,
+  0.12054482205301797,
+  0.16862219158920944
+ ],
+ "identity_coeff": -0.09886396933545821,
+ "provenance": {
+  "geometry_angstrom": [
+   [
+    "H",
+    0.0,
+    0.0,
+    0.0
+   ],
+   [
+    "H",
+    0.0,
+    0.0,
+    0.7414
+   ]
+  ],
+  "geometry_source": "NIST CCCBDB experimental geometry (casno 1333740); r_e from Huber and Herzberg (1979)",
+  "charge": 0,
+  "multiplicity": 1,
+  "n_spatial_orbitals": 2,
+  "n_electrons": 2,
+  "scf_energy_hartree": -1.1166843870853405,
+  "nuclear_repulsion_hartree": 0.7137539936876182,
+  "threshold": 1e-08,
+  "coeff_l1": 1.8850504928513105,
+  "coeff_l2": 0.5558934775742561,
+  "sha256": "a11dcf8e3bd5d44890f304a913949a0d0e5b77b5e94a4d7c61a051c752213392",
+  "generated_utc": "2026-10-01T13:23:47+00:00",
+  "generation_seconds": 0.028284285000040654,
+  "peak_rss_mb": 217.125,
+  "versions": {
+   "pyscf": "2.14.0",
+   "openfermion": "1.8.1",
+   "numpy": "2.4.6",
+   "python": "3.11.15"
+  },
+  "m_raw_including_identity": 15,
+  "dropped_below_threshold": 0,
+  "max_abs_imag": 0.0
+ }
+}

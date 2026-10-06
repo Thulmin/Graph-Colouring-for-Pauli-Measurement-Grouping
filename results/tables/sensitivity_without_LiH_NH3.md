@@ -1,0 +1,4 @@
+| relation   |   pairs (m >= 100, without LiH and NH3) |   DTP < best deployed |   DTP <= best deployed |   DTP < Iterated Greedy |   DTP > Iterated Greedy |   Wilcoxon p (exact, k vs best deployed) |
+|:-----------|----------------------------------------:|----------------------:|-----------------------:|------------------------:|------------------------:|-----------------------------------------:|
+| QWC        |                                       8 |                     6 |                      8 |                       0 |                       1 |                                 0.03125  |
+| FC         |                                       8 |                     8 |                      8 |                       2 |                       0 |                                 0.007812 |

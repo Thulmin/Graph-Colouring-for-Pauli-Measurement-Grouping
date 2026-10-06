@@ -1,0 +1,7 @@
+| id   | statement                                                                                      | result                                                                | holds   |
+|:-----|:-----------------------------------------------------------------------------------------------|:----------------------------------------------------------------------|:--------|
+| H1   | DTP k <= its DSATUR seed on 100% of runs (by construction)                                     | 150/150 runs                                                          | True    |
+| H2   | median DTP k <= best deployed on every pair with m >= 100, and strictly lower on at least half | <= on 20/20; < on 18/20                                               | True    |
+| H3   | polishing raises R̂: median ratio over QWC instances >= 1.5; k never increased                 | median ratio 1.570; k never increased: True; R̂ never decreased: True | True    |
+| H4   | DTP uses fewer groups than Sorted Insertion on each evaluation pair                            | fewer on 20/22                                                        | False   |
+| H5   | requirement coverage > 95% (20/20)                                                             | 20/20 = 100.0%                                                        | True    |

@@ -1,0 +1,8 @@
+instance,relation,method,it_limit,k,core_seconds
+HF_sto-3g_JW,FC,gcol_tabucol,1000,28,1.32
+HF_sto-3g_JW,QWC,gcol_tabucol,1000,151,18.02
+BH3_sto-3g_JW,FC,gcol_tabucol,1000,60,15.6
+HF_sto-3g_JW,QWC,gcol_partialcol,1000,151,17.96
+HF_sto-3g_JW,FC,gcol_partialcol,1000,29,0.93
+BH3_sto-3g_JW,QWC,gcol_tabucol,1000,,> 240 (stopped)
+BH3_sto-3g_JW,QWC,gcol_partialcol,1000,,> 240 (stopped)

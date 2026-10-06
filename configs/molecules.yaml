@@ -1,0 +1,113 @@
+# Molecular geometries used to generate the Hamiltonian instances.
+#
+# Coordinates are in Angstrom. Unless stated otherwise they are the Cartesian coordinates of the
+# experimental geometry listed by the NIST Computational Chemistry Comparison and Benchmark
+# Database (CCCBDB), "Experimental geometry" pages (https://cccbdb.nist.gov/expgeom2x.asp),
+# accessed 1 October 2026. The primary reference that CCCBDB cites for each geometry is given.
+# Charge is the net charge; multiplicity is 2S+1 (all instances are closed-shell singlets).
+#
+# Geometry, basis and coefficient threshold change the coefficients; the set of Pauli strings
+# with |a| >= 1e-8 depends only on which integrals vanish (by symmetry), see data/README.md.
+
+H2:
+  charge: 0
+  multiplicity: 1
+  geometry: [[H, 0.0, 0.0, 0.0], [H, 0.0, 0.0, 0.7414]]
+  source: "NIST CCCBDB experimental geometry (casno 1333740); r_e from Huber and Herzberg (1979)"
+
+LiH:
+  charge: 0
+  multiplicity: 1
+  geometry: [[Li, 0.0, 0.0, 0.0], [H, 0.0, 0.0, 1.5949]]
+  source: "NIST CCCBDB experimental geometry (casno 7580678); r_e from the NIST Diatomic Spectral Database"
+
+BeH2:
+  charge: 0
+  multiplicity: 1
+  geometry: [[Be, 0.0, 0.0, 0.0], [H, 0.0, 0.0, 1.3264], [H, 0.0, 0.0, -1.3264]]
+  source: "NIST CCCBDB experimental geometry (casno 7787522); r_e from Shayesteh et al. (2003), J. Chem. Phys. 118, 3622"
+
+H2O:
+  charge: 0
+  multiplicity: 1
+  geometry: [[O, 0.0, 0.0, 0.1173], [H, 0.0, 0.7572, -0.4692], [H, 0.0, -0.7572, -0.4692]]
+  source: "NIST CCCBDB experimental geometry (casno 7732185); r_e and angle from Hoy and Bunker (1979), J. Mol. Spectrosc. 74, 1"
+
+NH3:
+  charge: 0
+  multiplicity: 1
+  geometry: [[N, 0.0, 0.0, 0.0], [H, 0.0, -0.9377, -0.3816], [H, 0.8121, 0.4689, -0.3816], [H, -0.8121, 0.4689, -0.3816]]
+  source: "NIST CCCBDB experimental geometry (casno 7664417); from Herzberg (1966)"
+
+CH4:
+  charge: 0
+  multiplicity: 1
+  geometry: [[C, 0.0, 0.0, 0.0], [H, 0.6276, 0.6276, 0.6276], [H, 0.6276, -0.6276, -0.6276], [H, -0.6276, 0.6276, -0.6276], [H, -0.6276, -0.6276, 0.6276]]
+  source: "NIST CCCBDB experimental geometry (casno 74828); r_e from Hirota (1979), J. Mol. Spectrosc. 77, 213"
+
+N2:
+  charge: 0
+  multiplicity: 1
+  geometry: [[N, 0.0, 0.0, 0.5488], [N, 0.0, 0.0, -0.5488]]
+  source: "NIST CCCBDB experimental geometry (casno 7727379); r_e from Huber and Herzberg (1979)"
+
+CO:
+  charge: 0
+  multiplicity: 1
+  geometry: [[C, 0.0, 0.0, 0.0], [O, 0.0, 0.0, 1.1282]]
+  source: "NIST CCCBDB experimental geometry (casno 630080); r_e from the NIST Diatomic Spectral Database"
+
+HCl:
+  charge: 0
+  multiplicity: 1
+  geometry: [[Cl, 0.0, 0.0, 0.0], [H, 0.0, 0.0, 1.2746]]
+  source: "NIST CCCBDB experimental geometry (casno 7647010); r_e from the NIST Diatomic Spectral Database"
+
+NaH:
+  charge: 0
+  multiplicity: 1
+  geometry: [[Na, 0.0, 0.0, 0.0], [H, 0.0, 0.0, 1.8874]]
+  source: "NIST CCCBDB experimental geometry (casno 7646697); r_e from the NIST Diatomic Spectral Database"
+
+H2S:
+  charge: 0
+  multiplicity: 1
+  geometry: [[S, 0.0, 0.0, 0.1030], [H, 0.0, 0.9616, -0.8239], [H, 0.0, -0.9616, -0.8239]]
+  source: "NIST CCCBDB experimental geometry (casno 7783064); from Cook, De Lucia and Helminger (1975), J. Mol. Struct. 28, 237"
+
+# ---- tuning molecules (parameter choices only; never in evaluation tables) ----
+HF:
+  charge: 0
+  multiplicity: 1
+  geometry: [[F, 0.0, 0.0, 0.0], [H, 0.0, 0.0, 0.9168]]
+  source: "NIST CCCBDB experimental geometry (casno 7664393); r_e from Le Roy (1999), J. Mol. Spectrosc. 194, 189"
+
+BH3:
+  charge: 0
+  multiplicity: 1
+  geometry: [[B, 0.0, 0.0, 0.0], [H, 0.0, 1.1900, 0.0], [H, 1.0306, -0.5950, 0.0], [H, -1.0306, -0.5950, 0.0]]
+  source: "NIST CCCBDB experimental geometry (casno 13283313); r_0 from Kuchitsu (1998)"
+
+# ---- exact-optimum set: species without an experimental geometry in CCCBDB ----
+# CCCBDB lists HeH+ (casno 9000219) and H3+ but gives no experimental coordinates for either.
+# Their bond lengths are computed equilibrium values (scripts/ion_geometries.py: FCI/cc-pVTZ
+# scan, exact for two electrons within the basis) and are written below by that script.
+HeH+:
+  charge: 1
+  multiplicity: 1
+  geometry: [[He, 0.0, 0.0, 0.0], [H, 0.0, 0.0, 0.7756]]
+  source: "computed equilibrium bond length 0.7756 A (FCI/cc-pVTZ scan, scripts/ion_geometries.py); no experimental geometry in CCCBDB"
+
+H3+:
+  charge: 1
+  multiplicity: 1
+  geometry: [[H, 0.0000, 0.0000, 0.0000], [H, 0.8746, 0.0000, 0.0000], [H, 0.4373, 0.7574, 0.0000]]
+  source: "computed equilibrium side length 0.8746 A of the equilateral triangle (FCI/cc-pVTZ scan, scripts/ion_geometries.py); no experimental geometry in CCCBDB"
+
+# A linear H4 chain has no equilibrium structure (it dissociates into two H2 molecules).
+# It is a standard model system; the uniform spacing below is a stated convention.
+H4chain:
+  charge: 0
+  multiplicity: 1
+  geometry: [[H, 0.0, 0.0, 0.0], [H, 0.0, 0.0, 1.0], [H, 0.0, 0.0, 2.0], [H, 0.0, 0.0, 3.0]]
+  source: "model geometry: linear chain with uniform 1.0 Angstrom spacing (convention; no experimental structure exists)"

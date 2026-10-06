@@ -1,0 +1,5 @@
+test,n_instances,n_nonzero,W_plus,p_exact,median relative difference,p_holm
+QWC: DTP median k vs best deployed k,11,8,0.0,0.0078125,-0.005942275042444821,0.0078125
+QWC: DTP R̂ vs PennyLane dsatur R̂,11,11,65.0,0.001953125,0.7340151967597189,0.0078125
+FC: DTP median k vs best deployed k,11,10,0.0,0.001953125,-0.27941176470588236,0.0078125
+FC: DTP R̂ vs PennyLane dsatur R̂,11,10,55.0,0.001953125,1.2642815319946925,0.0078125
